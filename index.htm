@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .dog-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .dog-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dog-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #eee;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dog Store</h1>
+        <nav>
+            <a onclick="showSection('home')">Home</a> |
+            <a onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Dogs for Sale</h2>
+            <div class="dog-gallery">
+                <div class="dog-card">
+                    <img src="images/Gemini_Generated_Image_ta2phlta2phlta2p.png" alt="Golden Retriever">
+                    <h3>Golden Retriever</h3>
+                    <p>Friendly and playful. $800</p>
+                </div>
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=2" alt="Labrador">
+                    <h3>Labrador</h3>
+                    <p>Great with families. $750</p>
+                </div>
+                <div class="dog-card">
+                    <img src="https://placedog.net/400/300?id=3" alt="Poodle">
+                    <h3>Poodle</h3>
+                    <p>Smart and hypoallergenic. $900</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="hidden">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dog Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('contact').classList.add('hidden');
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
